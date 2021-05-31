@@ -130,3 +130,4 @@ class GroupController extends Controller
         return response()->json(['message' => 'user_successful_deleted'], 200);
     }
 }
+

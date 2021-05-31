@@ -37,3 +37,10 @@ Route::prefix('groups')->group(function () {
     Route::patch('/{group_id}', 'App\Http\Controllers\GroupController@update');
     Route::delete('/{group_id}', 'App\Http\Controllers\GroupController@destroy');
 });
+
+// Password reset
+Route::prefix('password')->group(function () {
+    Route::post('/reset', 'App\Http\Controllers\PasswordResetController@ForgotPassword');
+    Route::post('/reset/{token}', 'App\Http\Controllers\PasswordResetController@ResetPassword');
+    Route::get('/reset/{token}/remove', 'App\Http\Controllers\PasswordResetController@RemoveRequestPassword');
+});
